@@ -4,8 +4,8 @@ import java.awt.event.*;
 
 
 class RegistFra {
+	DBconnect db=new DBconnect();
 	public RegistFra(){
-		DBconnect db=new DBconnect();
 		JFrame frame=new JFrame("用户注册");
 		JPanel p1=new JPanel();
 		JLabel l1=new JLabel("用户注册");
@@ -72,12 +72,12 @@ class RegistFra {
 
 		b1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e){
-				String sex;
+				String sex="";
 				if (b10.isSelected()) {
 					sex="男";
 				}else sex="女";
-				db.regist(f2.getText(), f9.getText(), sex, f3.getText(), f4.getText(), f7.getText(), f8.getText());
-				JOptionPane.showMessageDialog(null,"注册成功");
+				if(db.regist(f2.getText(), f9.getText(), sex, f3.getText(), f4.getText(), f7.getText(), f8.getText())==0)JOptionPane.showMessageDialog(null,"注册成功");
+				else JOptionPane.showMessageDialog(null,"注册失败,请重试或联系管理员");
 			}
 		});
 		b2.addActionListener(new ActionListener() {
