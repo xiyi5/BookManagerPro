@@ -3,6 +3,6 @@ import java.awt.*;
 
 public class LoginFra {
     public LoginFra(){
-
+        
     }
 }
