@@ -3,13 +3,13 @@ import java.sql.*;
 public class DBconnect {
     String jdbc="com.mysql.cj.jdbc.Driver";
     String url="jdbc:mysql://localhost:3306/bookmanagerpro";
-    String userName="root";
+    String username="root";
     String password="324254";
     Connection c;
     public DBconnect(){
         try {
             Class.forName(jdbc);
-            c=DriverManager.getConnection(url, userName, password);
+            c=DriverManager.getConnection(url, username, password);
         } catch (Exception e) {
             e.printStackTrace();
         }
